@@ -1,0 +1,58 @@
+.header{
+  background-color: #ddd;
+  padding: 7px;
+}
+
+.itensMenuHeader{
+  list-style: none;
+  padding: 0
+}
+
+.menuHeader{
+  cursor: pointer;
+}
+
+@media (max-width: 550px){
+  .itensMenuHeader{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr)
+  }
+  
+  .inputHeader{
+    grid-column: 2 / span 4;
+  }
+
+  .inputHeader, .menuHeader, logoHeader{
+    justify-self: center;
+  }
+
+  .menuHeader img, .logoHeader img{
+    width: 25px
+  }
+  
+  .inputHeader input{
+    width: 90%
+  }
+
+  .itemHeader{
+    grid-column: span 6;
+    justify-self: center;
+    margin: 0.5vh;
+  }
+  
+  .colapsar{
+    display: none
+  }
+}
+
+@media (min-width: 550px){
+  .itensMenuHeader{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .inputHeader, .menuHeader{
+    display: none;
+  }
+}
