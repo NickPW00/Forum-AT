@@ -1,4 +1,4 @@
-import './App.css'
+import styles from './App.module.css'
 import Header from './Header/Header'
 import React from 'react'
 import FeedPrincipal from './FeedPrincipal/FeedPrincipal'
@@ -23,7 +23,7 @@ const topicos3 = [
 
 function TopicoNotorioCard(props) {
   return (
-    <div className="topicoNotorioCard">
+    <div className={styles.topicoNotorioCard}>
       <h3>{props.nomeDestaque}</h3>
       <span>
         <span>{props.tipoDestaque}</span> <span>{props.numDestaque}</span>
@@ -53,14 +53,15 @@ function TopicosNotorios(props) {
   }
   
   return (
-    <div className='topicosDiversos'>
+    <div className={styles.topicosDiversos}>
       <h3>Mais {props.topicoDestaque}</h3>
       <div>
-        {props.topicos.map(item =>
+        {props.topicos.map((item, index) =>
           <TopicoNotorioCard
             nomeDestaque={item}
             tipoDestaque={props.tipoTopicoDestaque}
             numDestaque={numeros ? numeroAleatorio() : dataAleatoria()}
+            key={index}
           />
         )}
       </div>
@@ -70,11 +71,11 @@ function TopicosNotorios(props) {
 
 export default function App() {
   return (
-    <div className='corpoPagina'>
+    <div className={styles.corpoPagina}>
       <Header />
-      <div className='distribuicaoSite'>
+      <div className={styles.distribuicaoSite}>
         <FeedPrincipal />
-        <div className='distribuicaoTopicos'>
+        <div className={styles.distribuicaoTopicos}>
           <TopicosNotorios
             topicoDestaque={"Curtidas"}
             tipoTopicoDestaque={'Curtidas'}
