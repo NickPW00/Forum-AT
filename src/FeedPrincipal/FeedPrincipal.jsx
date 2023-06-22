@@ -81,6 +81,7 @@ class FeedPrincipal extends React.Component {
           nomeUsuario="Lero"
           dataUsuario={this.gerarData()}
           nomeTopico="Rapadura é doce mas não é mole não?"
+          subTopico='Me ajudem neste penamento:'
           textoTopico="Qual a sua opinião sobre a doçura da rapadura? Você acha que ela é realmente doce ou acredita que existem outros doces mais açucarados e saborosos disponíveis no mercado atualmente? Comente sobre sua experiência pessoal com a rapadura e compartilhe se você considera que a rapadura é doce, mas não é mole mesmo. Explique sua perspectiva levando em conta aspectos de sabor, textura e tradição cultural."
           quantComent={dadosComentarios === null ? 0 : dadosComentarios.length}
         />
@@ -100,6 +101,7 @@ class FeedPrincipal extends React.Component {
             <Topico
               key={index}
               ehTopico={false}
+              fotoPerfil={item.imagem}
               nomeUsuario={item.nome}
               dataUsuario={this.gerarData()}
               textoComentario={item.comentario}
