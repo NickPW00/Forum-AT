@@ -1,6 +1,6 @@
-import './FeedPrincipal.css';
 import React from 'react';
 import Topico from './Topico/Topico';
+import styles from './FeedPrincipal.module.css'
 
 class FormComentario extends React.Component {
   pegarInformacoes = (event) => {
@@ -19,7 +19,7 @@ class FormComentario extends React.Component {
           <option value="Usuario 1">Usuario 1</option>
           <option value="Usuario 2">Usuario 2</option>
         </select>
-        <textarea className="review" name="review" rows="4" cols="50" />
+        <textarea className={styles.review} name="review" rows="4" cols="50" />
         <input type="submit" />
       </form>
     );
@@ -46,7 +46,7 @@ class FeedPrincipal extends React.Component {
 
   gerarData() {
     const dataInicial = new Date('2021-12-01');
-    const dataFinal = new Date('2023-12-31');
+    const dataFinal = new Date('2023-06-22');
     const diferencaMilissegundos = dataFinal - dataInicial;
     const milissegundosAleatorios = Math.floor(Math.random() * diferencaMilissegundos);
     const dataAleatoria = new Date(dataInicial.getTime() + milissegundosAleatorios);
@@ -66,7 +66,7 @@ class FeedPrincipal extends React.Component {
       comentario: textoComentario,
     };
     this.setState({
-      dadosComentarios: [novoComentario,  ...dadosComentarios],
+      dadosComentarios: [novoComentario, ...dadosComentarios],
       novoComentario: null,
     });
   };
@@ -75,7 +75,7 @@ class FeedPrincipal extends React.Component {
     const { dadosComentarios, novoComentario } = this.state;
 
     return (
-      <main className="feedPrincipal">
+      <main className={styles.feedPrincipal}>
         <Topico
           ehTopico
           nomeUsuario="Lero"
@@ -89,7 +89,7 @@ class FeedPrincipal extends React.Component {
           <Topico
             ehTopico={false}
             nomeUsuario={novoComentario.nome}
-            dataUsuario={this.gerarData()}
+            dataUsuario={'2023-06-22'}
             textoComentario={novoComentario.comentario}
           />
         )}

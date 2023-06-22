@@ -1,5 +1,5 @@
-import '../../FeedPrincipal.css'
 import React from 'react'
+import styles from '../../FeedPrincipal.module.css'
 
 class Interacoes extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class Interacoes extends React.Component {
   render() {
   let { showShare, numCurtidas, numComentarios, numShares } = this.state
     return (
-      <div className="interacoes">
+      <div className={styles.interacoes}>
         <span onClick={() => this.acrescentarNum('numCurtidas')}>Curtidas <span>{numCurtidas}</span> </span>
         {!showShare ? <span onClick={() => this.acrescentarNum('numComentarios')}>Comentários <span>{numComentarios}</span> </span> : 
         <span>Comentários <span>{this.props.quantComent}</span> </span>}

@@ -1,7 +1,3 @@
-.usuarioTopico, .usuarioComentario{
-  margin: 0;
-}
-
 .corpoPagina{
   background-color: #b0b0b0;
   height: max-content;
@@ -9,42 +5,44 @@
   flex-direction: column
 }
 
-.feedPrincipal{
-  margin: 2vh 1vw;
+.distribuicaoSite{
+  display:flex;
+}
+
+.distribuicaoTopicos{
   background-color: #efefef;
-  max-width: 700px;
+  margin: 2vh 1vw;
   padding: 1rem;
-  display: grid;
-  gap: 2vw;
+  height: max-content;
 }
 
-.textoTopicoComentario{
-  margin: 0.7rem;
+.topicoNotorioCard{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: dashed 1px black
 }
 
-.interacoes span{
-  cursor: pointer;
-}
-/* topico */
-
-.topico h2{
-  margin-block:0 0.7rem;
-}
-/* comentario */
-
-.comentario{
-  
+.topicoNotorioCard h3{
+  margin: 0
 }
 
-.usuarioTopico{
-  color:#707070;
-  font-size: 0.8rem
+.corpoPagina{
+  display: flex;
+}
+
+.topicosDiversos{
+  width: 100%
 }
 
 /* Formulario */
 
-.review{
-  resize: none;
-  width: 100%;
-  height: 
+@media (max-width: 850px){
+  .topicosDiversos{
+    display:none;
+  }
+  
+  .distribuicaoTopicos{
+    display: none
+  }
 }
